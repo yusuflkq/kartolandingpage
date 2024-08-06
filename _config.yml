@@ -1,1 +1,12 @@
 include: [".well-known"]
+
+permalink: pretty
+defaults:
+  - scope:
+      path: "post"
+    values:
+      permalink: /post/:path/
+
+# Optional: Add these if you want to ensure proper rendering and encoding
+markdown: kramdown
+encoding: utf-8
