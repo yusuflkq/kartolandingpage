@@ -16,7 +16,7 @@
     <a href="https://testflight.apple.com/join/8QsXEPO5">Download Karto</a>
     <script>
         // Get the post ID from the URL
-        var postId = window.location.pathname.split('/').pop();
+        var postId = window.location.pathname.split('/post/')[1];
         
         // Attempt to open the app
         window.location.href = 'karto://post/' + postId;
