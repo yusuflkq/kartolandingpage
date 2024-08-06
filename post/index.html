@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karto Post</title>
+    <meta property="og:title" content="Check out this Karto post!">
+    <meta property="og:description" content="Discover what's really happening around you with Karto.">
+    <meta property="og:image" content="https://kartoapp.com/kartodeeplinktest.png">
+    <meta property="og:url" content="https://kartoapp.com/post/">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <h1>Karto Post</h1>
+    <p>This post is best viewed in the Karto app.</p>
+    <a href="https://testflight.apple.com/join/8QsXEPO5">Download Karto</a>
+    <script>
+        // Get the post ID from the URL
+        var postId = window.location.pathname.split('/').pop();
+        
+        // Attempt to open the app
+        window.location.href = 'karto://post/' + postId;
+        
+        // If the app doesn't open after a short delay, redirect to TestFlight
+        setTimeout(function() {
+            window.location.href = 'https://testflight.apple.com/join/8QsXEPO5';
+        }, 500);
+    </script>
+</body>
+</html>
