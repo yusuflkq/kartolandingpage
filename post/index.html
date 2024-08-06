@@ -15,16 +15,36 @@
     <p>This post is best viewed in the Karto app.</p>
     <a href="https://testflight.apple.com/join/8QsXEPO5">Download Karto</a>
     <script>
-        // Get the post ID from the URL
-        var postId = window.location.pathname.split('/post/')[1];
-        
-        // Attempt to open the app
-        window.location.href = 'karto://post/' + postId;
-        
-        // If the app doesn't open after a short delay, redirect to TestFlight
-        setTimeout(function() {
-            window.location.href = 'https://testflight.apple.com/join/8QsXEPO5';
-        }, 500);
+        (function(location) {
+            if (location.search) {
+                var params = location.search.substring(1).split('&');
+                for (var i = 0; i < params.length; i++) {
+                    var param = params[i].split('=');
+                    if (param[0] === 'p') {
+                        var path = decodeURIComponent(param[1]);
+                        var postId = path.split('/').pop();
+                        if (postId) {
+                            // Attempt to open the app
+                            window.location.href = 'karto://post/' + postId;
+                            
+                            // If the app doesn't open after a short delay, redirect to TestFlight
+                            setTimeout(function() {
+                                window.location.href = 'https://testflight.apple.com/join/8QsXEPO5';
+                            }, 500);
+                            return;
+                        }
+                    }
+                }
+            }
+            
+            // If no post ID found, just try to open the app
+            window.location.href = 'karto://';
+            
+            // If the app doesn't open after a short delay, redirect to TestFlight
+            setTimeout(function() {
+                window.location.href = 'https://testflight.apple.com/join/8QsXEPO5';
+            }, 500);
+        })(window.location);
     </script>
 </body>
 </html>
