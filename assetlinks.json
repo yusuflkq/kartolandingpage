@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.karto",
+    "sha256_cert_fingerprints":
+    ["DA:48:74:7D:82:24:5B:99:1A:92:83:19:8F:2D:9A:57:2A:45:89:EB:4B:C1:1E:40:27:A7:7F:AA:E0:B2:CC:89"]
+  }
+}]
