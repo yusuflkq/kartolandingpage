@@ -3,35 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karto Post</title>
-    <meta property="og:title" content="Check out this Karto post!">
-    <meta property="og:description" content="Discover what's really happening around you with Karto.">
+    <title>Explore this Karto post: [Dynamic Title]</title>
+    <meta property="og:title" content="Explore this Karto post: [Dynamic Title]">
+    <meta property="og:description" content="[Dynamic Description] - Discover what's happening around you with Karto.">
     <meta property="og:image" content="https://kartoapp.com/kartodeeplinktest.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://kartoapp.com/post/">
+    <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Explore this Karto post: [Dynamic Title]">
+    <meta name="twitter:description" content="[Dynamic Description] - Discover what's happening around you with Karto.">
+    <meta name="twitter:image" content="https://kartoapp.com/kartodeeplinktest.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 400px;
+        }
+        h1 {
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 1.5rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #007AFF;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Karto Post</h1>
-    <p>This post is best viewed in the Karto app.</p>
-    <a href="https://testflight.apple.com/join/8QsXEPO5">Download Karto</a>
+    <div class="container">
+        <img src="/kartodeeplinktest.png" alt="Karto Logo" class="logo">
+        <h1>Explore this Karto post</h1>
+        <p>This content is best viewed in the Karto app. Download now to see what's happening around you!</p>
+        <a href="https://testflight.apple.com/join/8QsXEPO5" class="cta-button">Get Karto</a>
+    </div>
     <script>
         (function(location) {
             var path = location.pathname.split('/post/')[1];
             var postId = path ? path.split('/')[0] : null;
             
             if (postId) {
-                // Attempt to open the app
                 window.location.href = 'karto://post/' + postId;
                 
-                // If the app doesn't open after a short delay, redirect to TestFlight
                 setTimeout(function() {
                     window.location.href = 'https://testflight.apple.com/join/8QsXEPO5';
                 }, 500);
             } else {
-                // If no post ID found, just try to open the app
                 window.location.href = 'karto://';
                 
-                // If the app doesn't open after a short delay, redirect to TestFlight
                 setTimeout(function() {
                     window.location.href = 'https://testflight.apple.com/join/8QsXEPO5';
                 }, 500);
